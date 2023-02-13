@@ -25,7 +25,9 @@ public class CourierCreatingPositiveTest {
 
     @After
     public void cleanup() {
-        courierClient.delete(courierId);
+        if (courierId > 0) {
+            courierClient.delete(courierId);
+        }
     }
 
     @Test

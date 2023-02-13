@@ -25,8 +25,10 @@ public class CourierCreatingIdenticalNegativeTest {
     }
 
     @After
-    public void cleanUp() {
-        courierClient.delete(courierId);
+    public void cleanup() {
+        if (courierId > 0) {
+            courierClient.delete(courierId);
+        }
     }
 
     @Test
